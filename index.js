@@ -45,6 +45,7 @@ app.post("/recipe", async (req, res) => {
   const messages = initialMessage(ingredientList);
 
   try {
+    // chatGPT가 응답해준 대답
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages,
@@ -53,6 +54,7 @@ app.post("/recipe", async (req, res) => {
       top_p: 1,
     });
     const data = [...messages, response.choices[0].message];
+    //console.log("response", response);
     console.log("data", data);
     res.json({ data });
   } catch (error) {
