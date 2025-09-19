@@ -42,6 +42,7 @@ const initialMessage = (ingredientList) => {
 // 초기 답변
 app.post("/recipe", async (req, res) => {
   const { ingredientList } = req.body; // 프론트엔드에서 요청한 재료 목록 데이터
+  console.log("🚀 ~ ingredientList:", ingredientList)
   const messages = initialMessage(ingredientList);
 
   try {
@@ -55,7 +56,7 @@ app.post("/recipe", async (req, res) => {
     });
     const data = [...messages, response.choices[0].message];
     //console.log("response", response);
-    console.log("data", data);
+    // console.log("data", data);
     res.json({ data });
   } catch (error) {
     console.log(error);
