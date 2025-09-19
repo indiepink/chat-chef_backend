@@ -10,7 +10,7 @@ const app = express();
 // CLIENT_URL(해당 경로에서만 API 사용하기)
 // index.js
 const corsOption = {
-  origin: "zizi7777-chatchef.netlify.app",
+  origin: "https://zizi7777-chatchef.netlify.app",
   credentials: true,
 };
 
