@@ -48,7 +48,7 @@ app.post("/recipe", async (req, res) => {
   try {
     // chatGPT가 응답해준 대답
     const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       messages,
       temperature: 1,
       max_tokens: 4000,
@@ -69,7 +69,7 @@ app.post("/message", async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       messages: [...messages, userMessage],
       temperature: 1,
       max_tokens: 4000,
